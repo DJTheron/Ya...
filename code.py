@@ -18,14 +18,14 @@ while True:
             print('Please enter a valid number of tasks.')
             continue
         for i in range(task_number):
-            task = input(f'{i + 1}: ')          # instead of numberi, numberii it adds all of them and the +1 is because counting starts at 0
+            task = input(f'{i + 1}: ')          # prompt for each task using 1-based numbering for display
             tasks.append(task)                  # puts all the tasks in the list tasks[]
     elif choice == '2':
         if len(tasks) == 0:                     # len is for length and shows that if there are 3 items it prints the 3 items but if there are 0 it prints no tasks yet
             print('No tasks yet!')
         else:
             print('\nYour tasks:')              # here there are tasks and it prints the tasks that you used
-            for i, task in enumerate(tasks):    # enumerate is what it used to print all the things in tasks
+            for i, task in enumerate(tasks):    # enumerate provides both the index and the task value
                 print(f'{i + 1}. {task}')       # again this is used to print starting from 1 using i
                 time.sleep(0.5)                 # this is used to make it wait a bit before it prints the next task
             time.sleep(3)                       # this is used to make it wait a bit before it prints from the beginning
