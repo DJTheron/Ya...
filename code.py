@@ -12,8 +12,12 @@ while True:
     choice = input('Please enter a number: ')
 
     if choice == '1':
-        tasknumber = int(input('How many tasks do you want to add? '))
-        for i in range(tasknumber):
+        try:
+            task_number = int(input('How many tasks do you want to add? '))
+        except ValueError:
+            print('Please enter a valid number of tasks.')
+            continue
+        for i in range(task_number):
             task = input(f'{i + 1}: ')          # instead of numberi, numberii it adds all of them and the +1 is because counting starts at 0
             tasks.append(task)                  # puts all the tasks in the list tasks[]
     elif choice == '2':
@@ -33,7 +37,11 @@ while True:
             print('\nWhich task did you finish?')
             for i, task in enumerate(tasks):
                 print(f'{i + 1}. {task}')
-            finished = int(input('Enter task number: ')) - 1
+            try:
+                finished = int(input('Enter task number: ')) - 1
+            except ValueError:
+                print('Please enter a valid task number.')
+                continue
             if 0 <= finished < len(tasks):
                 completed_task = tasks.pop(finished)  # Remove it from the list
                 print(f'Great job finishing: {completed_task}!')
