@@ -24,10 +24,10 @@ while True:
             task = input(f'{i + 1}: ')          # prompt for each task using 1-based numbering for display
             tasks.append(task)                  # puts all the tasks in the list tasks[]
     elif choice == '2':
-        if len(tasks) == 0:                     # len is for length and shows that if there are 3 items it prints the 3 items but if there are 0 it prints no tasks yet
+        if len(tasks) == 0:                     # Check if task list is empty
             print('No tasks yet!')
         else:
-            print('\nYour tasks:')              # here there are tasks and it prints the tasks that you used
+            print('\nYour tasks:')
             for i, task in enumerate(tasks):    # enumerate provides both the index and the task value
                 print(f'{i + 1}. {task}')       # again this is used to print starting from 1 using i
                 time.sleep(0.5)                 # this is used to make it wait a bit before it prints the next task
