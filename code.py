@@ -24,7 +24,7 @@ while True:
             for i, task in enumerate(tasks):    # enumerate is what it used to print all the things in tasks
                 print(f'{i + 1}. {task}')       # again this is used to print starting from 1 using i
                 time.sleep(0.5)                 # this is used to make it wait a bit before it prints the next task
-            time.sleep(3)                       # this is used to make it wait a bit before it prints from the begining
+            time.sleep(3)                       # this is used to make it wait a bit before it prints from the beginning
 
     elif choice == '3':
         if len(tasks) == 0:
@@ -35,8 +35,8 @@ while True:
                 print(f'{i + 1}. {task}')
             finished = int(input('Enter task number: ')) - 1
             if 0 <= finished < len(tasks):
-                removed = tasks.pop(finished)  # Remove it from the list
-                print(f'Great job finishing: {removed}!')
+                completed_task = tasks.pop(finished)  # Remove it from the list
+                print(f'Great job finishing: {completed_task}!')
             else:
                 print('Invalid task number.')
 
