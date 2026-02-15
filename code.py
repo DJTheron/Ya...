@@ -17,6 +17,9 @@ while True:
         except ValueError:
             print('Please enter a valid number of tasks.')
             continue
+        if task_number <= 0:
+            print('Please enter at least one task.')
+            continue
         for i in range(task_number):
             task = input(f'{i + 1}: ')          # prompt for each task using 1-based numbering for display
             tasks.append(task)                  # puts all the tasks in the list tasks[]
