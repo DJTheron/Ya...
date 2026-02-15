@@ -9,7 +9,7 @@ while True:
     print('3. Finish a task.')
     print('4. Quit.')
 
-    choice = input('Please enter a number: ')
+    choice = input('Please enter your choice (1-4): ')
 
     if choice == '1':
         try:
@@ -21,8 +21,12 @@ while True:
             print('Please enter at least one task.')
             continue
         for i in range(task_number):
-            task = input(f'{i + 1}: ')          # prompt for each task using 1-based numbering for display
-            tasks.append(task)                  # puts all the tasks in the list tasks[]
+            while True:
+                task = input(f'{i + 1}: ').strip()  # prompt for each task using 1-based numbering for display
+                if task:
+                    tasks.append(task)              # puts all the tasks in the list tasks[]
+                    break
+                print('Task cannot be empty. Please try again.')
     elif choice == '2':
         if len(tasks) == 0:                     # Check if task list is empty
             print('No tasks yet!')
