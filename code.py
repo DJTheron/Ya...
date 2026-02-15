@@ -1,6 +1,6 @@
 import time
 
-tasks = []                                      # this is a /list\ that will hold all the tasks that atre added
+tasks = []                                      # this is a list that will hold all the tasks that are added
 
 while True:
     print('\n\n\nWelcome to your To-Do List')
@@ -13,16 +13,16 @@ while True:
 
     if choice == '1':
         tasknumber = int(input('How many tasks do you want to add? '))
-        for i in range(tasknumber): 
-            task = input(f'{i + 1}: ')          # instead of numberi, numberii it adds all of them and the +1 is cuz it starts at 0
-            tasks.append(task)                  # puts all the tasks in the list Task[] 
+        for i in range(tasknumber):
+            task = input(f'{i + 1}: ')          # instead of numberi, numberii it adds all of them and the +1 is because counting starts at 0
+            tasks.append(task)                  # puts all the tasks in the list tasks[]
     elif choice == '2':
         if len(tasks) == 0:                     # len is for length and shows that if there are 3 items it prints the 3 items but if there are 0 it prints no tasks yet
             print('No tasks yet!')
         else:
             print('\nYour tasks:')              # here there are tasks and it prints the tasks that you used
-            for i, task in enumerate(tasks):    # enumerate is what it used to print all the things in tasks 
-                print(f'{i + 1}. {task}')       # agian this is used to print starting from 1 using i
+            for i, task in enumerate(tasks):    # enumerate is what it used to print all the things in tasks
+                print(f'{i + 1}. {task}')       # again this is used to print starting from 1 using i
                 time.sleep(0.5)                 # this is used to make it wait a bit before it prints the next task
             time.sleep(3)                       # this is used to make it wait a bit before it prints from the begining
 
@@ -41,18 +41,11 @@ while True:
                 print('Invalid task number.')
 
     elif choice == '4':
-        print('FINISH YOUR TASKS NOW YOU....')      # Loop instead of repeating 14 times
-        time.sleep(0.5)
-        print('.')
-        time.sleep(0.5)
-        print('.')
-        time.sleep(0.5)
-        print('.')
-        time.sleep(0.5)
-        print('.')
-        time.sleep(0.5)
-        print('.')
-        break               # finally quits and dosnt restart
+        print('FINISH YOUR TASKS NOW YOU....')      # Loop instead of repeating several times
+        for _ in range(5):
+            time.sleep(0.5)
+            print('.')
+        break               # finally quits and doesn't restart
 
     else:
-        print('Invalid input. Please try again.')     # at the verry end incase their input is rong
+        print('Invalid input. Please try again.')     # at the very end in case their input is wrong
